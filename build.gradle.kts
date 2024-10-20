@@ -105,6 +105,9 @@ unimined.minecraft(sourceSets.getByName("lexforge")) {
         mixinConfig("$id.mixins.json")
         loader(catalog.versions.lexforge.get())
     }
+
+    defaultRemapJar = false
+    createJarTask = false
 }
 
 unimined.minecraft(sourceSets.getByName("fabric")) {
@@ -185,7 +188,17 @@ tasks {
         duplicatesStrategy = DuplicatesStrategy.WARN
     }
 
+    jar {
+        archiveClassifier = "mojmap"
+    }
+
     named<Jar>("fabricJar") {
         duplicatesStrategy = DuplicatesStrategy.WARN
+
+        archiveClassifier = "dev"
+    }
+
+    named<Jar>("remapFabricJar") {
+        archiveClassifier = ""
     }
 }
