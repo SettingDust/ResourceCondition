@@ -56,10 +56,6 @@ jobs:
             1.20.1
           game-version-filter: releases
 
-          dependencies: |
-            fabric-language-kotlin
-            tectonic
-
           java: |
             17
 
